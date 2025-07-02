@@ -18,7 +18,7 @@ const App = () => {
       <AnimatedLights />
       <LampBackground show={!isHome} colorExp={selectedExperience} />
       {/* main content */}
-      <div className="relative w-full h-dvh backdrop-opacity-100">
+      <div className="flex flex-col relative w-full h-dvh backdrop-opacity-100">
         <Pages show={!isHome} page={selectedExperience} />
         <MainNav
           setHome={(isHome) => setIsHome(isHome)}

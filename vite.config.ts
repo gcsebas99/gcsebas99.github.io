@@ -10,3 +10,11 @@ export default defineConfig({
     tailwindcss()
   ],
 })
+
+  // Uncomment the following lines if you need to configure the server for allowed hosts (NGROK)
+  // server: {
+  //   allowedHosts: [
+  //     '9079-201-207-176-239.ngrok-free.app',
+  //     'localhost',
+  //   ]
+  // }

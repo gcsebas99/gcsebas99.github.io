@@ -282,7 +282,7 @@ const Pages: React.FC<PagesProps> = ({ show, page = 0 }) => {
       <header className={cn("w-full h-16 md:h-20 flex items-end justify-start border-gray-300 border-b-2")}>
         <h1 className="text-lg md:text-xl font-bold mb-2">Skills</h1>
       </header>
-      <div className={cn("flex-1 overflow-y-auto py-4")}>
+      <div className={cn("flex-1 overflow-y-auto pt-4 pb-10")}>
         <h2 className="text-base md:text-lg font-medium mb-2 mt-4">Tech Stack</h2>
         {renderSkillGrid(techSkills)}
         <h2 className="text-base md:text-lg font-medium mb-2 mt-4">Soft skills</h2>
