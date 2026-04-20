@@ -8,11 +8,11 @@ type LampBackgroundProps = {
 };
 
 const colors = [
-  "rgba(3, 36, 43, 0.90)",
-  "rgba(20, 6, 28, 0.90)",
-  "rgba(53, 18, 35, 0.90)",
-  "rgba(15, 43, 33, 0.90)",
-  "rgba(61, 44, 22, 0.90)"
+  "rgba(8, 20, 50, 0.92)",
+  "rgba(15, 8, 38, 0.92)",
+  "rgba(5, 22, 35, 0.92)",
+  "rgba(5, 28, 18, 0.92)",
+  "rgba(35, 20, 5, 0.92)"
 ];
 
 const LampBackground: React.FC<LampBackgroundProps> = ({ show, colorExp = 0 }) => {
@@ -23,7 +23,7 @@ const LampBackground: React.FC<LampBackgroundProps> = ({ show, colorExp = 0 }) =
     const handleMouseMove = (event: MouseEvent) => {
       if (gradientRef.current) {
         const { clientX, clientY } = event;
-        gradientRef.current.style.backgroundImage = `radial-gradient(at ${clientX}px ${clientY}px, ${selectedColor} 0, #0e0f1a 70%)`;
+        gradientRef.current.style.backgroundImage = `radial-gradient(at ${clientX}px ${clientY}px, ${selectedColor} 0, #050814 70%)`;
       }
     };
 
@@ -52,7 +52,7 @@ const LampBackground: React.FC<LampBackgroundProps> = ({ show, colorExp = 0 }) =
         className="absolute inset-0 w-full"
         style={{
           height: "100dvh",
-          backgroundImage: `radial-gradient(at 300px 300px, ${selectedColor} 0, #0e0f1a 70%)`,
+          backgroundImage: `radial-gradient(at 300px 300px, ${selectedColor} 0, #050814 70%)`,
         }}
       />
     </div>

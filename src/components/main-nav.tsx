@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import SEBAS from "../assets/sebas.jpg";
-import { Home, ShieldUser, Award, Send, BriefcaseBusiness, Rocket } from "lucide-react";
+import { Home, Contact, Sparkles, FolderOpen, Code2, Briefcase } from "lucide-react";
 import { cn } from "../utils/class-names";
 
 type MainNavProps = {
@@ -15,11 +15,11 @@ const MainNav: React.FC<MainNavProps> = ({ setHome, setExperience }) => {
   const [animatingSelection, setAnimatingSelection] = useState<number>(-1);
   const iconSize = isHome ? 40 : 32;
   const navItems = [
-    { label: "Information", icon: <ShieldUser size={iconSize}/> },
-    { label: "Interests", icon: <Rocket size={iconSize} /> },
-    { label: "Portfolio", icon: <BriefcaseBusiness size={iconSize} /> },
-    { label: "Skills", icon: <Send size={iconSize} /> },
-    { label: "Experience", icon: <Award size={iconSize} /> },
+    { label: "Information", icon: <Contact size={iconSize}/> },
+    { label: "Interests", icon: <Sparkles size={iconSize} /> },
+    { label: "Portfolio", icon: <FolderOpen size={iconSize} /> },
+    { label: "Skills", icon: <Code2 size={iconSize} /> },
+    { label: "Experience", icon: <Briefcase size={iconSize} /> },
   ];
 
   useEffect(() => {
@@ -82,11 +82,11 @@ const MainNav: React.FC<MainNavProps> = ({ setHome, setExperience }) => {
           alt="Sebastián G"
           className="w-32 h-32 rounded-full shadow-lg ring-white/70 ring-2 border-4 border-transparent mb-4 select-none"
         />
-        <h1 className="text-2xl font-bold text-white uppercase">
+        <h1 className="text-2xl font-bold text-white tracking-wide">
           Sebastián Gamboa
         </h1>
-        <h2 className="text-sm font-medium text-white">
-          Software Analyst ● Full Stack Engineer
+        <h2 className="text-sm font-normal text-blue-300/80 tracking-wider uppercase">
+          Full Stack Engineer
         </h2>
       </div>
 
