@@ -36,7 +36,7 @@ const MainNav: React.FC<MainNavProps> = ({ setHome, setExperience }) => {
 
   useEffect(() => {
     if (animatingSelection === -1) return;
-    const timeout = setTimeout(() => setAnimatingSelection(-1), 300);
+    const timeout = setTimeout(() => setAnimatingSelection(-1), 400);
     return () => clearTimeout(timeout);
   }, [animatingSelection]);
 
@@ -144,6 +144,7 @@ const MainNav: React.FC<MainNavProps> = ({ setHome, setExperience }) => {
                 ? "h-[58px] flex flex-row items-center gap-3.5 px-5"
                 : "h-[60px] flex flex-col items-center justify-center",
               "bg-white/[0.04] hover:bg-white/[0.08] transition-colors duration-200",
+              "overflow-hidden isolate",
               "menu-opt-effect-1",
               animatingSelection === index ? "menu-opt-effect" : "",
             )}

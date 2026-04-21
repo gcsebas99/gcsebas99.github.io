@@ -73,60 +73,49 @@ body {
   }
 }
 
-/* Animated border */
-@property --angle{
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-
-.menu-opt-effect::after, .menu-opt-effect::before{
+/* Selection ripple wave effect */
+.menu-opt-effect::after{
   content: '';
   position: absolute;
-  height: 100%;
-  width: 100%;
+  width: 200%;
+  aspect-ratio: 1 / 1;
   top: 50%;
   left: 50%;
-  translate: -50% -50%;
   z-index: -1;
-  padding: 3px;
-  border-radius: 10px;
-  animation: 300ms spin-border linear;
-  box-sizing: content-box;
-}
-
-.menu-opt-effect::before{
-  filter: blur(0.75rem);
-  opacity: 0.35;
+  border-radius: 50%;
+  animation: 350ms ripple-wave ease-out forwards;
+  pointer-events: none;
 }
 
 /* Refined palette: blue, violet, cyan, emerald, amber */
-.menu-opt-effect-1::after, .menu-opt-effect-1::before{
-  background-image: conic-gradient(from var(--angle), #60a5fa, transparent, transparent, transparent, transparent, transparent, transparent, #60a5fa);
+.menu-opt-effect-1::after{
+  background: rgba(96, 165, 250, 0.4);
 }
 
-.menu-opt-effect-2::after, .menu-opt-effect-2::before{
-  background-image: conic-gradient(from var(--angle), #a78bfa, transparent, transparent, transparent, transparent, transparent, transparent, #a78bfa);
+.menu-opt-effect-2::after{
+  background: rgba(167, 139, 250, 0.4);
 }
 
-.menu-opt-effect-3::after, .menu-opt-effect-3::before{
-  background-image: conic-gradient(from var(--angle), #22d3ee, transparent, transparent, transparent, transparent, transparent, transparent, #22d3ee);
+.menu-opt-effect-3::after{
+  background: rgba(34, 211, 238, 0.4);
 }
 
-.menu-opt-effect-4::after, .menu-opt-effect-4::before{
-  background-image: conic-gradient(from var(--angle), #34d399, transparent, transparent, transparent, transparent, transparent, transparent, #34d399);
+.menu-opt-effect-4::after{
+  background: rgba(52, 211, 153, 0.4);
 }
 
-.menu-opt-effect-5::after, .menu-opt-effect-5::before{
-  background-image: conic-gradient(from var(--angle), #fbbf24, transparent, transparent, transparent, transparent, transparent, transparent, #fbbf24);
+.menu-opt-effect-5::after{
+  background: rgba(251, 191, 36, 0.4);
 }
 
-@keyframes spin-border{
-  from{
-    --angle: -90deg;
+@keyframes ripple-wave{
+  0%{
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
   }
-  to{
-    --angle: 360deg;
+  100%{
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
   }
 }
 
