@@ -16,7 +16,7 @@ const App = () => {
     <>
       {/* animated backgrounds */}
       <AnimatedLights />
-      <LampBackground show={!isHome} colorExp={selectedExperience} />
+      <LampBackground />
       {/* main content */}
       <div className="flex flex-col relative w-full h-dvh backdrop-opacity-100">
         <Pages show={!isHome} page={selectedExperience} />

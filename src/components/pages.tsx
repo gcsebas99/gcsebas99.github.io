@@ -77,7 +77,7 @@ const Pages: React.FC<PagesProps> = ({ show, page = 0 }) => {
         <h1 className="text-lg md:text-xl font-semibold mb-2 tracking-wide">Information</h1>
       </header>
       <div className="flex-1 overflow-y-auto py-6 px-2">
-        <div className="flex flex-col md:flex-row gap-6 bg-white/5 backdrop-blur-sm py-8 px-6 rounded-xl border border-white/10">
+        <div className="flex flex-col md:flex-row gap-6 bg-white/5 backdrop-blur-sm py-8 px-6 rounded-lg border border-white/10">
 
           {/* Photo */}
           <div className="flex flex-col items-center md:items-start basis-[22%] shrink-0">
@@ -88,7 +88,7 @@ const Pages: React.FC<PagesProps> = ({ show, page = 0 }) => {
               <img
                 src={SEBAS}
                 alt="Sebastián G"
-                className="w-full h-full object-cover rounded-xl shadow-lg ring-1 ring-white/20"
+                className="w-full h-full object-cover rounded-md shadow-lg ring-1 ring-white/20"
               />
             </div>
           </div>
@@ -432,7 +432,7 @@ const Pages: React.FC<PagesProps> = ({ show, page = 0 }) => {
     return (
       <div
         key={index}
-        className="flex flex-col bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-white/20 hover:bg-white/8 transition-all duration-300 group"
+        className="flex flex-col bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-white/20 hover:bg-white/8 transition-all duration-300 group"
       >
         <div className="overflow-hidden aspect-[16/10] bg-black/30">
           <img
@@ -558,10 +558,10 @@ const Pages: React.FC<PagesProps> = ({ show, page = 0 }) => {
 
   const pages = [
     renderInformationPage(),
-    renderInterestsPage(),
-    renderPortfolioPage(),
     renderSkillsPage(),
+    renderPortfolioPage(),
     renderExperiencePage(),
+    renderInterestsPage(),
   ];
 
   return (
