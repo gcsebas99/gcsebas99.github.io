@@ -7,7 +7,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #050814;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -17,8 +17,8 @@
 
 body {
   margin: 0;
-  font-weight: 100;
-  background: radial-gradient(#045d75,#181657,#0e0f1a);
+  font-weight: 300;
+  background: radial-gradient(ellipse at 25% 15%, #0d2137, #0e1440, #050814);
   -webkit-overflow-Y: hidden;
   -moz-overflow-Y: hidden;
   -o-overflow-Y: hidden;
@@ -50,21 +50,21 @@ body {
 }
 
 @theme {
-  --animate-floatUp: floatUp 10s linear infinite;
+  --animate-floatUp: floatUp 14s linear infinite;
   @keyframes floatUp {
     0% {
       top: 100vh;
       opacity: 0;
     }
-    25% {
-      opacity: 1;
+    20% {
+      opacity: 0.6;
     }
     50% {
       top: 0vh;
-      opacity: 0.8;
+      opacity: 0.4;
     }
-    75% {
-      opacity: 1;
+    80% {
+      opacity: 0.6;
     }
     100% {
       top: -100vh;
@@ -96,28 +96,29 @@ body {
 }
 
 .menu-opt-effect::before{
-  filter: blur(1.5rem);
-  opacity: 0.5;
+  filter: blur(0.75rem);
+  opacity: 0.35;
 }
 
+/* Refined palette: blue, violet, cyan, emerald, amber */
 .menu-opt-effect-1::after, .menu-opt-effect-1::before{
-  background-image: conic-gradient(from var(--angle), #00d2ff, transparent, transparent, transparent, transparent, transparent, transparent, #00d2ff);
+  background-image: conic-gradient(from var(--angle), #60a5fa, transparent, transparent, transparent, transparent, transparent, transparent, #60a5fa);
 }
 
 .menu-opt-effect-2::after, .menu-opt-effect-2::before{
-  background-image: conic-gradient(from var(--angle), #b100ff, transparent, transparent, transparent, transparent, transparent, transparent, #b100ff);
+  background-image: conic-gradient(from var(--angle), #a78bfa, transparent, transparent, transparent, transparent, transparent, transparent, #a78bfa);
 }
 
 .menu-opt-effect-3::after, .menu-opt-effect-3::before{
-  background-image: conic-gradient(from var(--angle), #ff3cac, transparent, transparent, transparent, transparent, transparent, transparent, #ff3cac);
+  background-image: conic-gradient(from var(--angle), #22d3ee, transparent, transparent, transparent, transparent, transparent, transparent, #22d3ee);
 }
 
 .menu-opt-effect-4::after, .menu-opt-effect-4::before{
-  background-image: conic-gradient(from var(--angle), #2cff9d, transparent, transparent, transparent, transparent, transparent, transparent, #2cff9d);
+  background-image: conic-gradient(from var(--angle), #34d399, transparent, transparent, transparent, transparent, transparent, transparent, #34d399);
 }
 
 .menu-opt-effect-5::after, .menu-opt-effect-5::before{
-  background-image: conic-gradient(from var(--angle), #ffae00, transparent, transparent, transparent, transparent, transparent, transparent, #ffae00);
+  background-image: conic-gradient(from var(--angle), #fbbf24, transparent, transparent, transparent, transparent, transparent, transparent, #fbbf24);
 }
 
 @keyframes spin-border{

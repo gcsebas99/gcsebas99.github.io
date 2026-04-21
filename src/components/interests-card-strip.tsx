@@ -44,7 +44,7 @@ const InterestsCardStrip: React.FC<InterestsCardStripProps> = ({ interests }) =>
               onMouseEnter={() => !isMobile && setExpandedInterest(item.key)}
               onMouseLeave={() => !isMobile && setExpandedInterest(null)}
               className={cn(
-                "relative p-6 rounded-xl overflow-hidden cursor-pointer flex flex-col justify-between",
+                "relative p-6 rounded-lg overflow-hidden cursor-pointer flex flex-col justify-between",
                 item.bg,
                 "text-left",
                 "transition-all duration-500 ease-in-out",
