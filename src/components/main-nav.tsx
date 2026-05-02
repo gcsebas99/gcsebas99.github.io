@@ -65,7 +65,7 @@ const MainNav: React.FC<MainNavProps> = ({ setHome, setExperience }) => {
       {/* Home: photo + name header */}
       <div
         className={cn(
-          "flex items-center gap-5 mb-10 transition-opacity duration-500 px-3",
+          "flex items-center gap-5 mb-10 transition-opacity duration-500 px-4",
           !isAnimating ? "opacity-100" : "opacity-0",
           !isHome ? "hidden" : "",
         )}
@@ -106,7 +106,7 @@ const MainNav: React.FC<MainNavProps> = ({ setHome, setExperience }) => {
         layout
         animate={{
           width: isHome ? [64, 280, 340] : [340, 280, 64],
-          height: isHome ? 310 : 332,
+          height: isHome ? 370 : 332,
         }}
         transition={{
           layout: {
@@ -141,7 +141,7 @@ const MainNav: React.FC<MainNavProps> = ({ setHome, setExperience }) => {
               "relative cursor-pointer w-full rounded-md",
               "text-gray-300 hover:text-white",
               isHome
-                ? "h-[58px] flex flex-row items-center gap-3.5 px-5"
+                ? "h-[66px] flex flex-row items-center justify-center gap-3.5 px-4"
                 : "h-[60px] flex flex-col items-center justify-center",
               "bg-white/[0.04] hover:bg-white/[0.08] transition-colors duration-200",
               "overflow-hidden isolate",
@@ -161,7 +161,7 @@ const MainNav: React.FC<MainNavProps> = ({ setHome, setExperience }) => {
             </div>
             <span
               className={cn(
-                "text-sm tracking-wide font-light transition-all duration-300",
+                "text-[15px] tracking-wide font-light transition-all duration-300",
                 isAnimating ? "opacity-0" : "opacity-100",
                 !isHome ? "hidden" : "",
               )}

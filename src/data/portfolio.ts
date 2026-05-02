@@ -30,23 +30,6 @@ const portfolio: Project[] = [
     github: "https://github.com/gcsebas99/gcsebas99.github.io",
   },
   {
-    name: "RPN Calculator",
-    image: RPNCALCIMAGE,
-    description: "Terminal-style calculator built for a job application. Supports reverse polish notation and multiple visual themes.",
-    details: [
-      {
-        name: "Tech",
-        description: "React, Sass"
-      },
-      {
-        name: "Date",
-        description: "June 2022"
-      },
-    ],
-    github: "https://github.com/gcsebas99/rpn-ex",
-    website: "https://gcsebas99.github.io/rpn-ex/",
-  },
-  {
     name: "TFM – Final Master's Project",
     image: TFMIMAGE,
     description: "Collaborative academic project combining emotion detection and marketing analytics. A custom app shows users an ad and records their facial expressions. An AI model processes emotion data, helping marketers understand user reactions.",
@@ -65,6 +48,23 @@ const portfolio: Project[] = [
       },
     ],
     github: "https://github.com/gcsebas99/tfm-api-v2",
+  },
+  {
+    name: "RPN Calculator",
+    image: RPNCALCIMAGE,
+    description: "Terminal-style calculator built for a job application. Supports reverse polish notation and multiple visual themes.",
+    details: [
+      {
+        name: "Tech",
+        description: "React, Sass"
+      },
+      {
+        name: "Date",
+        description: "June 2022"
+      },
+    ],
+    github: "https://github.com/gcsebas99/rpn-ex",
+    website: "https://gcsebas99.github.io/rpn-ex/",
   },
   {
     name: "Product Stock Checker (In Progress)",

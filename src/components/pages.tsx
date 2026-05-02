@@ -225,7 +225,7 @@ const Pages: React.FC<PagesProps> = ({ show, page = 0 }) => {
     degree: string, period: string
   ) => (
     <div className="relative flex flex-col md:flex-row gap-y-3 md:gap-x-4 items-center md:items-start text-center md:text-left p-4 rounded-lg hover:bg-white/5 transition-colors duration-200">
-      <div className="hidden md:block absolute -left-[calc(1.25rem+1px)] top-6 w-2.5 h-2.5 rounded-full bg-blue-500/70 ring-2 ring-blue-500/20" />
+      <div className="hidden md:block absolute -left-[calc(1.25rem+1px)] top-6 w-2.5 h-2.5 rounded-full bg-blue-500/70 ring-2 ring-blue-500/20 ml-[-4px]" />
       <div className="shrink-0 flex justify-center">
         <img src={logo} alt={org} className="w-14 md:w-16 rounded-md object-contain" />
       </div>
@@ -248,7 +248,7 @@ const Pages: React.FC<PagesProps> = ({ show, page = 0 }) => {
     description: string
   ) => (
     <div className="relative flex flex-col md:flex-row gap-y-3 md:gap-x-4 items-start text-center md:text-left p-4 rounded-lg hover:bg-white/5 transition-colors duration-200">
-      <div className="hidden md:block absolute -left-[calc(1.25rem+1px)] top-6 w-2.5 h-2.5 rounded-full bg-white/20 ring-2 ring-white/10" />
+      <div className="hidden md:block absolute -left-[calc(1.25rem+1px)] top-6 w-2.5 h-2.5 rounded-full bg-white/20 ring-2 ring-white/10 ml-[-4px]" />
       {logo ? (
         <div className="w-full md:w-auto shrink-0 flex justify-center">
           <img src={logo} alt={company} className="max-w-14 md:max-w-16 rounded-md object-contain" />
@@ -289,7 +289,7 @@ const Pages: React.FC<PagesProps> = ({ show, page = 0 }) => {
   const renderTechSkillCard = (skill: Skill, index: number) => (
     <div
       key={index}
-      className="relative flex flex-col items-center gap-2 p-3 bg-black/40 rounded-lg border border-white/10 hover:border-white/20 hover:bg-black/60 transition-all duration-300"
+      className="relative flex flex-col items-center gap-2 p-3 py-7 md:py-4 bg-black/40 rounded-lg border border-white/10 hover:border-white/20 hover:bg-black/60 transition-all duration-300"
     >
       <div className="absolute top-1.5 right-1.5">
         {renderProficiencyBadge(skill.proficiency)}
@@ -366,7 +366,7 @@ const Pages: React.FC<PagesProps> = ({ show, page = 0 }) => {
           <div className="mb-7">
             <h2 className="text-sm font-semibold text-white/90 mb-1">Soft Skills</h2>
             <p className="text-xs text-gray-500 mb-3">The non-technical side of building good software</p>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
               {softSkills.map((skill, i) => (
                 <div key={i} className="flex items-start gap-3 p-3 bg-black/40 rounded-lg border border-white/10">
                   <div className="text-blue-400/70 mt-0.5 shrink-0">
