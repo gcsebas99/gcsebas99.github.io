@@ -1,7 +1,7 @@
 import PORTFOLIOIMAGE from "../assets/portfolio/portfolio.jpg";
 import RPNCALCIMAGE from "../assets/portfolio/rpncalc.jpg";
 import TFMIMAGE from "../assets/portfolio/tfm.jpg";
-import COMINGSOONIMAGE from "../assets/portfolio/coming-soon.jpg";
+import UISPECMCPIMAGE from "../assets/portfolio/ui-spec-mcp.jpg";
 
 type Project = {
   name: string;
@@ -13,6 +13,22 @@ type Project = {
 };
 
 const portfolio: Project[] = [
+  {
+    name: "Web UI Component Specification — MCP Server",
+    image: UISPECMCPIMAGE,
+    description: "An MCP server that gives AI coding assistants direct access to the Web UI Component Specification — a comprehensive behavioral reference for web UI component libraries covering component specs, test scenarios, accessibility requirements, and a step-by-step build guide.",
+    details: [
+      {
+        name: "Tech",
+        description: "Python, MCP, SDD, UI/UX"
+      },
+      {
+        name: "Date",
+        description: "May 2026"
+      },
+    ],
+    github: "https://github.com/gcsebas99/web-ui-component-spec-mcp",
+  },
   {
     name: "Portfolio Page",
     image: PORTFOLIOIMAGE,
@@ -65,21 +81,6 @@ const portfolio: Project[] = [
     ],
     github: "https://github.com/gcsebas99/rpn-ex",
     website: "https://gcsebas99.github.io/rpn-ex/",
-  },
-  {
-    name: "Product Stock Checker (In Progress)",
-    image: COMINGSOONIMAGE,
-    description: "Internal tool for a small family-run café. Lets staff review and update inventory item by item, then generates a downloadable PDF report with stock levels and alerts.",
-    details: [
-      {
-        name: "Tech",
-        description: "React (planned), TailwindCSS (planned)"
-      },
-      {
-        name: "Date",
-        description: "Ongoing"
-      },
-    ],
   },
 ];
 
