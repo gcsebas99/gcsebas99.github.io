@@ -1,35 +1,37 @@
-import "@fontsource/inter/400.css";
-import "@fontsource/inter/800.css";
-import "@fontsource/inter/400-italic.css";
-import "./App.css"
-import { AnimatedLights } from "./components/animated-lights";
-import { MainNav } from "./components/main-nav";
-import { LampBackground } from "./components/lamp-background";
-import { useState } from "react";
-import { Pages } from "./components/pages";
+import "@fontsource-variable/inter";
+import "@fontsource/jetbrains-mono/400.css";
+import "@fontsource/jetbrains-mono/500.css";
+import { useReveal } from "./hooks/use-reveal";
+import { SiteHeader } from "./components/site-header";
+import { Hero } from "./components/hero";
+import { Projects } from "./components/projects";
+import { Experience } from "./components/experience";
+import { Skills } from "./components/skills";
+import { About } from "./components/about";
+import { Contact } from "./components/contact";
 
 const App = () => {
-  const [isHome, setIsHome] = useState<boolean>(true);
-  const [selectedExperience, setSelectedExperience] = useState<number>(0);
+  useReveal();
 
   return (
     <>
-      {/* animated backgrounds */}
-      <AnimatedLights />
-      <LampBackground />
-      {/* main content */}
-      <div className="flex flex-col relative w-full h-dvh backdrop-opacity-100">
-        <Pages show={!isHome} page={selectedExperience} />
-        <MainNav
-          setHome={(isHome) => setIsHome(isHome)}
-          setExperience={(experience) => setSelectedExperience(experience)}
-        />
-      </div>
+      <a
+        href="#projects"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:rounded-md focus:bg-accent-strong focus:px-3 focus:py-2 focus:text-sm focus:text-white"
+      >
+        Skip to content
+      </a>
+      <SiteHeader />
+      <main>
+        <Hero />
+        <Projects />
+        <Experience />
+        <Skills />
+        <About />
+      </main>
+      <Contact />
     </>
-
-  )
+  );
 };
 
-export {
-  App
-};
+export { App };
