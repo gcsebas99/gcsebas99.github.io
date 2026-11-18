@@ -1,133 +1,89 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Surfaces */
+  --color-bg: #080b11;
+  --color-surface: #0e131b;
+  --color-surface-2: #131a25;
+  --color-line: #1c2431;
+  --color-line-strong: #2a3446;
+
+  /* Text */
+  --color-fg: #e7ebf2;
+  --color-muted: #9aa5b8;
+  --color-subtle: #657088;
+
+  /* Accent (blue) */
+  --color-accent: #6aa8ff;
+  --color-accent-strong: #3b82f6;
+  --color-accent-soft: rgb(106 168 255 / 0.1);
+  --color-accent-line: rgb(106 168 255 / 0.28);
+
+  --color-ok: #4ade80;
+}
+
 :root {
-  font-family: Inter, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  color-scheme: dark;
+}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #050814;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
 
-  font-synthesis: none;
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  font-feature-settings: "cv11", "ss01";
+  line-height: 1.6;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  margin: 0;
-  font-weight: 300;
-  background: radial-gradient(ellipse at 25% 15%, #0d2137, #0e1440, #050814);
-  -webkit-overflow-Y: hidden;
-  -moz-overflow-Y: hidden;
-  -o-overflow-Y: hidden;
-  overflow-y: hidden;
-  -webkit-animation: fadeIn 1 1s ease-out;
-  -moz-animation: fadeIn 1 1s ease-out;
-  -o-animation: fadeIn 1 1s ease-out;
-  animation: fadeIn 1 1s ease-out;
+::selection {
+  background: rgb(106 168 255 / 0.3);
+  color: #fff;
 }
 
-@-webkit-keyframes fadeIn{
-  from{opacity: 0;}
-  to{opacity: 1;}
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
-@-moz-keyframes fadeIn{
-  from{opacity: 0;}
-  to{opacity: 1;}
+/* Faint engineering grid behind the hero, fading out downward */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, #000 40%, transparent 100%);
 }
 
-@-o-keyframes fadeIn{
-  from{opacity: 0;}
-  to{opacity: 1;}
+/* Scroll reveal (see use-reveal.ts) */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 600ms ease-out, transform 600ms ease-out;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
 }
 
-@keyframes fadeIn{
-  from{opacity: 0;}
-  to{opacity: 1;}
-}
-
-@theme {
-  --animate-floatUp: floatUp 14s linear infinite;
-  @keyframes floatUp {
-    0% {
-      top: 100vh;
-      opacity: 0;
-    }
-    20% {
-      opacity: 0.6;
-    }
-    50% {
-      top: 0vh;
-      opacity: 0.4;
-    }
-    80% {
-      opacity: 0.6;
-    }
-    100% {
-      top: -100vh;
-      opacity: 0;
-    }
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
-}
-
-/* Selection ripple wave effect */
-.menu-opt-effect::after{
-  content: '';
-  position: absolute;
-  width: 200%;
-  aspect-ratio: 1 / 1;
-  top: 50%;
-  left: 50%;
-  z-index: -1;
-  border-radius: 50%;
-  animation: 350ms ripple-wave ease-out forwards;
-  pointer-events: none;
-}
-
-/* Refined palette: blue, violet, cyan, emerald, amber */
-.menu-opt-effect-1::after{
-  background: rgba(96, 165, 250, 0.4);
-}
-
-.menu-opt-effect-2::after{
-  background: rgba(167, 139, 250, 0.4);
-}
-
-.menu-opt-effect-3::after{
-  background: rgba(34, 211, 238, 0.4);
-}
-
-.menu-opt-effect-4::after{
-  background: rgba(52, 211, 153, 0.4);
-}
-
-.menu-opt-effect-5::after{
-  background: rgba(251, 191, 36, 0.4);
-}
-
-@keyframes ripple-wave{
-  0%{
-    transform: translate(-50%, -50%) scale(0);
+  .reveal {
     opacity: 1;
-  }
-  100%{
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0;
-  }
-}
-
-@layer utilities {
-  @keyframes slide-down-fade {
-    0% {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    transform: none;
+    transition: none;
   }
 }
